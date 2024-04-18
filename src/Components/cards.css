@@ -1,0 +1,21 @@
+.cards{
+    width: 90%;
+    height:auto;
+    margin: auto;
+    margin-top: 20px;
+   display: flex;
+   justify-content: space-around;
+}
+.card{
+    width: 200px;
+    height: 100px;
+    background-color: rgb(225, 224, 224);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tempIcon{
+    font-size: 20px;
+}

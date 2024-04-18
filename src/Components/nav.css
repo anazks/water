@@ -1,0 +1,27 @@
+.navBar{
+    height: 60px;
+    width: 50%;
+    background-color: rgb(225, 224, 224);
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.Location{
+    width: 100px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

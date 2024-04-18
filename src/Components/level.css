@@ -1,0 +1,21 @@
+.level{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.PrdtBtn{
+    width: 120px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+.PrdtBtn:hover{
+    background-color: white;
+    color: black;
+}
+.level h1{
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
