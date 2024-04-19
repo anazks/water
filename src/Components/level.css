@@ -5,15 +5,16 @@
     justify-content: space-around;
 }
 .PrdtBtn{
-    width: 120px;
-    height: 30px;
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
     background-color: black;
     color: white;
     border: none;
 }
 .PrdtBtn:hover{
-    background-color: white;
-    color: black;
+    background-color: greenyellow;
+    color: white;
 }
 .level h1{
     color: white;

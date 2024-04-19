@@ -6,7 +6,7 @@ function App(){
   <>
       <NavBar/>
       <Cards/>
-        <Level/>
+
   </>
    
   )

@@ -7,15 +7,69 @@
    justify-content: space-around;
 }
 .card{
-    width: 200px;
-    height: 100px;
-    background-color: rgb(225, 224, 224);
-
+  
+    width: 300px;
+    height: 200px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color:rgb(15, 14, 14);
+    color: white;
+    border: 2px solid greenyellow;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5%;
 }
 
 .tempIcon{
     font-size: 20px;
+}
+.Prediction{
+    justify-content: space-around;
+    /* background-color: black; */
+    color: white;   
+    display: flex;
+    opacity: .6;
+    background-image: url();
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 300px;
+    margin: auto;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+}
+.pressure{
+    width: 30%;
+    height: 30%;
+    color: rgb(61, 194, 61);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.Prediction span{
+    color: green;
+}
+h4{
+    color: red;
+}
+.pressure b{
+    color: rgb(207, 24, 24);
+}
+.PREDICTION_HEADING{
+    text-align: center;
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    margin-top: 3%;
+}
+.Buttons{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
 }

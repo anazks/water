@@ -47,9 +47,9 @@ function NavBar() {
         <h1><b><i>Flood Monitoring</i></b></h1>
       </div>
       <div className='Location'>
-        <CiLocationOn style={{ color: 'white', fontSize: '20px' }} />
+        <CiLocationOn style={{ color: 'black', fontSize: '20px', }} />
         {currentLocation && (
-          <span style={{ color: 'white', marginLeft: '5px' }}>
+          <span style={{ color: 'black', marginLeft: '5px' }}>
             {locationName.suburb}
           </span>
         )}
