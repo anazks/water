@@ -1,17 +1,18 @@
-.cards{
+.cards {
     width: 90%;
-    height:auto;
+    height: auto;
     margin: auto;
     margin-top: 20px;
-   display: flex;
-   justify-content: space-around;
-}
-.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
   
-    width: 300px;
+  .card {
+    width: 45%; /* Adjust the width based on screen size */
     height: 200px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    background-color:rgb(15, 14, 14);
+    background-color: rgb(15, 14, 14);
     color: white;
     border: 2px solid greenyellow;
     display: flex;
@@ -19,29 +20,29 @@
     align-items: center;
     flex-wrap: wrap;
     margin-top: 5%;
-}
-
-.tempIcon{
+  }
+  
+  .tempIcon {
     font-size: 20px;
-}
-.Prediction{
+  }
+  
+  .Prediction {
     justify-content: space-around;
-    /* background-color: black; */
-    color: white;   
+    color: white;
     display: flex;
-    opacity: .6;
+    opacity: 0.6;
     background-image: url();
     background-size: cover;
     background-repeat: no-repeat;
-    width: 60%;
+    width: 90%; /* Adjust the width based on screen size */
     height: 300px;
     margin: auto;
     margin-top: 10px;
     flex-wrap: wrap;
     padding: 10px;
-    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
-}
-.pressure{
+  }
+  
+  .pressure {
     width: 30%;
     height: 30%;
     color: rgb(61, 194, 61);
@@ -50,26 +51,83 @@
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.Prediction span{
+  }
+  
+  .Prediction span {
     color: green;
-}
-h4{
+  }
+  
+  h4 {
     color: red;
-}
-.pressure b{
+  }
+  
+  .pressure b {
     color: rgb(207, 24, 24);
-}
-.PREDICTION_HEADING{
+  }
+  
+  .PREDICTION_HEADING {
     text-align: center;
     background-color: white;
-    width: 50%;
+    width: 90%; /* Adjust the width based on screen size */
     margin: auto;
     margin-top: 3%;
-}
-.Buttons{
+  }
+  
+  .Buttons {
     width: 100%;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
-}
+  }
+  
+  .Alerts {
+    width: 90%; /* Adjust the width based on screen size */
+    height: 30%;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    animation: blink 1s infinite alternate; /* Blink animation */
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1; /* Start with full opacity */
+    }
+    100% {
+      opacity: 0; /* End with 0 opacity (invisible) */
+    }
+  }
+  
+  /* Media Queries for responsiveness */
+  @media only screen and (max-width: 768px) {
+    .card {
+        margin-top: 10%;
+      width: 90%; /* Adjust card width for smaller screens */
+    }
+  
+    .Prediction {
+      width: 90%; /* Adjust prediction container width for smaller screens */
+    }
+  
+    .PREDICTION_HEADING {
+      width: 90%; /* Adjust heading width for smaller screens */
+    }
+  
+    .Alerts {
+      width: 90%; /* Adjust alerts container width for smaller screens */
+    }
+    .Prediction {
+        width: 100%; /* Adjust width for smaller screens */
+        height: auto; /* Allow height to adjust dynamically based on content */
+        max-height: 500px; /* Set a maximum height for smaller screens */
+        margin-top: 5px; /* Adjust top margin for smaller screens */
+      }
+      .Prediction span{
+        font-size: 12px;
+      }
+  }
+  

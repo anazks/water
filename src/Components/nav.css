@@ -1,36 +1,58 @@
-.navBar{
-    height: 60px;
-    width: 90%;
-    background-color: rgb(225, 224, 224);
-    margin: auto;
-    margin-top: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    color: black;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.navBar {
+  height: 60px;
+  width: 90%;
+  background-color: rgb(225, 224, 224);
+  margin: auto;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: fixed;
   left: 5%;
 }
-.Location{
-    width: 100px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: black;
-    left: 6%;
 
+.Location {
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: black;
+  left: 6%;
 }
-.main{
-    display: flex;
-    justify-content: space-between;
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Location span {
+  font-size: 20px;
+  font-family: bold;
+  margin-left: 20px;
+}
+
+/* Media Queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .navBar {
+    margin-top: 50px;
+  }
+  
+  .Location {
+   top: 67px;
+
+  }
+
+  .main {
+    justify-content: center; /* Center align main content on smaller screens */
     align-items: center;
-}
-.Location span{
-    font-size: 20px;
-    font-family: bold;
-    margin-left: 20px;
+  }
+  .navBar h1{
+    margin-top: 20px;
+  }
 }

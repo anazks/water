@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './nav.css';
 import { CiLocationOn } from "react-icons/ci";
-
+import { useNavigate } from 'react-router-dom';
 function NavBar() {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [locationName, setLocationName] = useState('');
-
+  const [userData, setUserData] = useState(null); 
+  const navigate = useNavigate();
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -22,6 +23,11 @@ function NavBar() {
       );
     } else {
       console.error('Geolocation is not supported by your browser');
+    }
+    const storedUserData = JSON.parse(localStorage.getItem('userData'));
+    if (storedUserData) {
+      setUserData(storedUserData[0]);
+      console.log(storedUserData,"--;;;;;;;;;;;;")
     }
   }, []);
 
@@ -40,11 +46,18 @@ function NavBar() {
       setLocationName('Error fetching location name');
     }
   };
-
+  const handleLogout = () => {
+    // Clear user data from localStorage
+    localStorage.removeItem('userData');
+    // Navigate to login route
+    navigate('/');
+  };
   return (
     <div className='main'>
       <div className='navBar'>
         <h1><b><i>Flood Monitoring</i></b></h1>
+      </div>
+      <div>
       </div>
       <div className='Location'>
         <CiLocationOn style={{ color: 'black', fontSize: '20px', }} />
@@ -53,7 +66,15 @@ function NavBar() {
             {locationName.suburb}
           </span>
         )}
+      <p style={{color:'red',marginLeft:'10px'}}>{userData && userData.username}</p> 
+      {
+        userData ?
+      <p style={{color:'red',marginLeft:'10px'}} onClick={handleLogout}>Logout</p> 
+        : ""
+      }
+
       </div>
+
     </div>
   );
 }

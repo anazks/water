@@ -18,8 +18,9 @@ function Cards() {
   const [wind, setWind] = useState(null);
   const [rainfall, setRainfall] = useState(null); // New state for rainfall prediction
   const API_KEY = '076465d2e663be277c6d13a3991ca3b6';
+  const [lelAlert,setLevlalert] = useState(false)
   const [showP,setP] = useState(false)
-
+  const [rainfallP,seRainFallp] = useState(false)
   useEffect(() => {
     const fetchData = async () => {
       dataRef.ref().child('test').on('value', (data) => {
@@ -28,8 +29,13 @@ function Cards() {
         setTemp(getData[0]);
         setHum(getData[1]);
         setLvl(getData[2]);
+        if(getData[2]>500){
+          setLevlalert(true)
+        }else{
+          setLevlalert(false)
+        }
       });
-
+  
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           position => {
@@ -40,6 +46,12 @@ function Cards() {
             Axios.get(`/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=${API_KEY}`).then((response)=>{
               console.log(response, "cloud data")
               setPrediction(response.data.main);
+                if(response.data.main.feels_like<40){
+                  seRainFallp(true)
+                }else{
+                  seRainFallp(false)
+
+                }
               setWind(response.data.wind);
             });
 
@@ -60,7 +72,12 @@ function Cards() {
       }
     };
 
+
     fetchData();
+      // Check water level every second
+  const interval = setInterval(() => {
+    fetchData();
+  }, 1000);
   }, []);
   const showPrediction  = ()=>{
     console.log(showP,"before")
@@ -71,6 +88,21 @@ function Cards() {
 
   return (
     <>
+    {
+      lelAlert ?
+        <div className="Alerts">
+          <h2><i>HIGH WATER LEVEL DETECTED</i></h2>
+        </div> :
+                 ""
+    }
+    {
+      rainfallP ? 
+        <div className="Alerts">
+          <h2><i>Expected Rainfall.....!!!</i></h2>
+        </div> :
+             ""
+    }
+   
       <div className='cards'>
         <div className='card'>
           <WiHumidity style={{fontSize:"100px"}} />
@@ -110,11 +142,7 @@ function Cards() {
       
                     </>
                     : ""
-                  } 
-                
-      
-      
-                 
+                  }  
                 </>
               </div> : ''
               }
